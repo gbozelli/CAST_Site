@@ -1,12 +1,11 @@
 import NavBar from "./NavBar";
 
-function People(){
+function AANML(){
   return (
     <>
-
-
+      <NavBar />
     </>
   )
 }
 
-export default People;
+export default AANML;

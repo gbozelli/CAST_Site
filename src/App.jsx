@@ -1,7 +1,7 @@
 import NavBar from "./components/NavBar";
 import { useEffect, useState } from "react";
 import './components/styles/App.css';
-
+import { Outlet } from "react-router-dom";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -31,7 +31,10 @@ function App() {
       ) : (
         <>
           <NavBar />
-          
+          <div style={{ paddingTop: "100px" }}>
+        {/* espaço para não sobrepor o conteúdo */}
+        <Outlet />
+      </div>
         </>
       )}
     </>

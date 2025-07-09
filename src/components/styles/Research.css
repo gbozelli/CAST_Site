@@ -1,0 +1,44 @@
+.research-container {
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+  background-color: black;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* 3 colunas */
+  gap: 30px;
+  max-width: 1000px;
+  width: 100%;
+}
+
+.card {
+  background-color: #f0f0f0;
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  margin-bottom: 10px;
+  background-color: #ddd;
+  /* Placeholder visual */
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  font-size: 16px;
+  display: block;
+  margin-top: 8px;
+}

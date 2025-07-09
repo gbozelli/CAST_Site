@@ -1,12 +1,11 @@
 import NavBar from "./NavBar";
 
-function People(){
+function About(){
   return (
     <>
-
-
+      <NavBar />
     </>
   )
 }
 
-export default People;
+export default About;

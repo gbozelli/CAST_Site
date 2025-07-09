@@ -1,12 +1,11 @@
 import NavBar from "./NavBar";
 
-function People(){
+function LIBR(){
   return (
     <>
-
-
+      <NavBar />
     </>
   )
 }
 
-export default People;
+export default LIBR;
