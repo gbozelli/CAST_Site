@@ -13,6 +13,7 @@ import OC from "./components/research/Optical-Communications"
 import LIBR from "./components/research/Lithium-ion-batteries-recycling"
 import ANNML from "./components/research/Artificial-neural-networks-and-machine-learning"
 import EEWR from "./components/research/Electronic-equipment-waste-recycling"
+import ResearchCards from "./components/research/ResearchCards";
 
 const router = createBrowserRouter([
   {
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
         path: "research",
         element: <Research />,
         children: [
+          {
+            index: true, 
+            element: <ResearchCards />,
+          },
           {
             path: "Life-Cycle-Engineering",
             element: <LCE />,

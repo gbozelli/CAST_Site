@@ -26,16 +26,17 @@ function App() {
       {isLoading ? (
         <div className='loading'>
           <div className='spinner'></div>
-          <p>Carregando...</p>
+          <p>Loading...</p>
         </div>
       ) : (
-        <>
+        <div className="main">
           <NavBar />
-          <div style={{ paddingTop: "100px" }}>
-        {/* espaço para não sobrepor o conteúdo */}
-        <Outlet />
+            <div className="content" style={{ paddingTop: "100px" }}>
+
+              <Outlet />
+
       </div>
-        </>
+        </div>
       )}
     </>
   );

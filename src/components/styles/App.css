@@ -1,3 +1,18 @@
+.main {
+  background-color: black;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 100px;
+  gap: 80px;
+}
 
 .loading {
   display: flex;

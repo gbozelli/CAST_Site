@@ -1,11 +1,17 @@
-import NavBar from "./NavBar";
+import Sidebar from "../Sidebar";
 
 function AANML(){
+  const links = [
+    { text: "Machine Learning", to: "/people" },
+    { text: "About us", to: "/about" },
+  ];
+
   return (
     <>
-      <NavBar />
+      <Sidebar links={links} />
+
     </>
-  )
+  );
 }
 
 export default AANML;

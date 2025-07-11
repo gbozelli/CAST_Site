@@ -1,8 +1,18 @@
+body {
+  background-color: #000;
+  /* fundo preto */
+  margin: 0;
+  height: 100%;
+  padding: 0;
+  font-family: sans-serif;
+}
+
 .research-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   padding: 40px 20px;
-  background-color: black;
 }
 
 .grid {
@@ -17,7 +27,6 @@
 .card {
   background-color: #f0f0f0;
   padding: 15px;
-  text-align: center;
   transition: transform 0.2s ease;
 }
 
