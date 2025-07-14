@@ -13,14 +13,20 @@ import OC from "./components/research/Optical-Communications"
 import LIBR from "./components/research/Lithium-ion-batteries-recycling"
 import ANNML from "./components/research/Artificial-neural-networks-and-machine-learning"
 import EEWR from "./components/research/Electronic-equipment-waste-recycling"
+import PPM from "./components/research/Processing-and-Properties-of-Materals"
+import Home from "./components/Home"
 import ResearchCards from "./components/research/ResearchCards";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <App />, // <- AQUI USAMOS O LAYOUT GERAL
     errorElement: <ErrorPage />,
     children: [
+      {
+        index: true,
+        element: <Home />, // <- ESSA É A PÁGINA "HOME" DENTRO DO LAYOUT
+      },
       {
         path: "news",
         element: <News />,
@@ -60,6 +66,10 @@ const router = createBrowserRouter([
           {
             path: "Electronic-equipment-waste-recycling",
             element: <EEWR />,
+          },
+          {
+            path: "Processing-and-Properties-of-Materials",
+            element: <PPM />,
           },
         ]
       },

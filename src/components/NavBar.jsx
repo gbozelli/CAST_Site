@@ -20,11 +20,11 @@ function NavBar() {
         {!scrolled && <img src={'/assets/cast2.png'} alt="Logo" />}
       </div>
       <div className="nav-links">
-        <Link to="" className="nav-link">Home</Link>
-        <Link to="research" className="nav-link">Research</Link>
-        <Link to="news" className="nav-link">News</Link>
-        <Link to="people" className="nav-link">People</Link>
-        <Link to="about" className="nav-link">About</Link>
+        <Link to="/" className="nav-link">Home</Link>
+        <Link to="/research" className="nav-link">Research</Link>
+        <Link to="/news" className="nav-link">News</Link>
+        <Link to="/people" className="nav-link">People</Link>
+        <Link to="/about" className="nav-link">About</Link>
       </div>
     </div>
   );

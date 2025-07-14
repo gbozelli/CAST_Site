@@ -1,16 +1,25 @@
-import { Link, Outlet } from "react-router-dom";
 import './styles/Research.css';
-import Sidebar from "./Sidebar";
+import { useEffect } from "react";
+import { useOutletContext, Outlet, useLocation } from "react-router-dom";
+
 function Research() {
-  const links = [
-    { text: "People", to: "/people" },
-    { text: "About us", to: "/about" },
-  ];
+  const { setSidebarContent } = useOutletContext();
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.pathname === "/research") {
+      setSidebarContent([
+        { text: "Home", href: "/" },
+        { text: "About us", href: "/about" },
+        { text: "People", href: "/people" },
+        { text: "Research", href: "/research" },
+      ]);
+    }
+  }, [location.pathname]); 
 
   return (
     <>
-      <Sidebar links={links} />
-      <Outlet />
+      <Outlet context={{ setSidebarContent }} />
     </>
   );
 }

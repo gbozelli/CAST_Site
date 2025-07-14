@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import "../styles/Research.css";
 
 function ResearchCards() {
+
+  
+
   return (
     <div className="research-container">
       <div className="grid">

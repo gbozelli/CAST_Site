@@ -1,0 +1,17 @@
+.textContent{
+  display: flex;
+  flex-direction: column;
+  padding: 56px;
+
+}
+
+.title{
+  color: #fff;
+  font-size: 24px;
+  font-weight: bolder;
+}
+
+.text {
+  font-size: 18px;
+  color: #fff;
+}

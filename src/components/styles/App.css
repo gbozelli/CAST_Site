@@ -36,6 +36,13 @@
   animation: spin 1s linear infinite;
 }
 
+.text {
+  padding: 56px;
+  padding-right: 160px;
+  font-size: 18px;
+  color: #fff;
+}
+
 @keyframes spin {
   0% {
     transform: rotate(0deg);

@@ -2,9 +2,15 @@ import NavBar from "./components/NavBar";
 import { useEffect, useState } from "react";
 import './components/styles/App.css';
 import { Outlet } from "react-router-dom";
+import Sidebar from "./components/Sidebar";
+import { useLocation } from "react-router-dom";
+
 
 function App() {
+  const location = useLocation();
+
   const [isLoading, setIsLoading] = useState(true);
+  const [sidebarContent, setSidebarContent] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -21,6 +27,17 @@ function App() {
     fetchData();
   }, []);
 
+  useEffect(() => {
+    if (location.pathname === "/") {
+      setSidebarContent([
+        { text: "Home", href: "/" },
+        { text: "About us", href: "/about" },
+        { text: "People", href: "/people" },
+        { text: "Research", href: "/research" },
+      ]);
+    }
+  }, [location.pathname]);
+
   return (
     <>
       {isLoading ? (
@@ -32,10 +49,10 @@ function App() {
         <div className="main">
           <NavBar />
             <div className="content" style={{ paddingTop: "100px" }}>
-
-              <Outlet />
-
-      </div>
+              <Sidebar links={sidebarContent} />
+               
+              <Outlet context={{ setSidebarContent }}/>
+              </div>
         </div>
       )}
     </>
