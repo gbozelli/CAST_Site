@@ -1,0 +1,42 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dashboardContainer {
+  max-width: 800px;
+  margin: 60px auto;
+  background-color: #f5f5f5;
+  padding: 40px;
+  margin-bottom: 300px;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.dashboardTitle {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #000000;
+}
+
+.dashboardSection {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.dashboardSection button {
+  padding: 14px 24px;
+  background-color: #000000;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dashboardSection button:hover {
+  background-color: #00096b;
+}

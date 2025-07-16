@@ -1,0 +1,76 @@
+body {
+  padding-top: 100px;
+}
+
+.dashboardContainer {
+  width: 700px;
+  margin: 60px auto;
+  background-color: #f5f5f5;
+  padding: 40px;
+  margin-bottom: 300px;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.dashboardTitle {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #000000;
+}
+
+.dashboardSection {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.dashboardSection button {
+  padding: 14px 24px;
+  background-color: #000000;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+select {
+  padding: 12px 16px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #fff;
+  color: #333;
+  width: 100%;
+  max-width: 400px;
+  margin: 10px 0;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  appearance: none;
+  /* remove o estilo nativo do navegador */
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='14'%20height='14'%20viewBox='0%200%2014%2014'%3E%3Cpath%20fill='black'%20d='M7%2010l5-5H2z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 14px;
+  cursor: pointer;
+}
+
+select:focus {
+  border-color: #01003f;
+  box-shadow: 0 0 4px rgba(112, 0, 232, 0.5);
+  outline: none;
+}
+
+textarea {
+  padding: 12px 16px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+
+}
+
+.dashboardSection button:hover {
+  background-color: #00096b;
+}

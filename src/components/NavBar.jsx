@@ -1,9 +1,17 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import './styles/NavBar.css';
 
 function NavBar() {
+  const navigate = useNavigate();
   const [scrolled, setScrolled] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const handleLogout = () => {
+    localStorage.removeItem('auth');
+    setIsLoggedIn(false);
+    navigate('/login');
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -12,6 +20,10 @@ function NavBar() {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    setIsLoggedIn(localStorage.getItem('auth') === 'true');
   }, []);
 
   return (
@@ -25,6 +37,11 @@ function NavBar() {
         <Link to="/news" className="nav-link">News</Link>
         <Link to="/people" className="nav-link">People</Link>
         <Link to="/about" className="nav-link">About</Link>
+        {isLoggedIn ? (
+          <button onClick={handleLogout}>Sair</button>
+        ) : (
+          <button onClick={() => navigate('/login')}>Login</button>
+        )}
       </div>
     </div>
   );

@@ -16,16 +16,24 @@ import EEWR from "./components/research/Electronic-equipment-waste-recycling"
 import PPM from "./components/research/Processing-and-Properties-of-Materals"
 import Home from "./components/Home"
 import ResearchCards from "./components/research/ResearchCards";
+import Login from "./components/Login"
+import Dashboard from './components/Dashboard';
+import AddResearch from './components/AddResearch';
+import AddNews from './components/AddNews';
+import DashboardButton from './components/DashboradButton';
+import PrivateRoute from './components/PrivateRoute';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />, // <- AQUI USAMOS O LAYOUT GERAL
+    element: <App />, 
     errorElement: <ErrorPage />,
+    
     children: [
+      
       {
         index: true,
-        element: <Home />, // <- ESSA É A PÁGINA "HOME" DENTRO DO LAYOUT
+        element: <Home />, 
       },
       {
         path: "news",
@@ -39,6 +47,7 @@ const router = createBrowserRouter([
         path: "about",
         element: <About />,
       },
+      
       {
         path: "research",
         element: <Research />,
@@ -74,6 +83,31 @@ const router = createBrowserRouter([
         ]
       },
     ],
+  },
+  { 
+    path: "login",
+    element: <Login /> 
+  },
+  {
+    path:"dashboard",
+    element:
+      <PrivateRoute>
+        <Dashboard />
+      </PrivateRoute>,
+    children: [
+      {
+        index: true, 
+        element: <DashboardButton />,
+      },
+      { 
+        path: "add-research",
+        element: <AddResearch /> 
+      },
+      { 
+        path: "add-news",
+        element: <AddNews /> 
+      },
+    ]
   },
 ]);
 

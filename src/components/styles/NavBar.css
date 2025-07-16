@@ -93,3 +93,7 @@ img {
 .nav-link:hover {
   color: #000b62;
 }
+
+button {
+  background-color: #000b62;
+}
