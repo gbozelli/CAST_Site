@@ -22,6 +22,7 @@ import AddResearch from './components/AddResearch';
 import AddNews from './components/AddNews';
 import DashboardButton from './components/DashboradButton';
 import PrivateRoute from './components/PrivateRoute';
+import NewsDetail from './components/NewsDetail';
 
 const router = createBrowserRouter([
   {
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
       {
         path: "news",
         element: <News />,
+      },
+      {
+        path: "news/:id",
+        element: <NewsDetail />,
       },
       {
         path: "people",

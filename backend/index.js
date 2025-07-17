@@ -27,7 +27,6 @@ db.serialize(() => {
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     title TEXT,
     content TEXT,
-    department TEXT,
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP
   )`);
 });
@@ -99,4 +98,20 @@ app.get('/news/:department', (req, res) => {
 
 app.listen(PORT, () => {
   console.log(`Servidor rodando em http://localhost:${PORT}`);
+});
+
+app.get('/all-news', (req, res) => {
+  db.all(`SELECT * FROM news`, [], (err, rows) => {
+    if (err) return res.status(500).json({ message: 'Erro ao buscar notícias' });
+    res.json(rows);
+  });
+});
+
+app.get('/news-by-id/:id', (req, res) => {
+  const { id } = req.params;
+  db.get(`SELECT * FROM news WHERE id = ?`, [id], (err, row) => {
+    if (err) return res.status(500).json({ message: 'Erro ao buscar notícia' });
+    if (!row) return res.status(404).json({ message: 'Notícia não encontrada' });
+    res.json(row);
+  });
 });

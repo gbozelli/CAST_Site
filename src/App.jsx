@@ -48,7 +48,7 @@ function App() {
       ) : (
         <div className="main">
           <NavBar />
-            <div className="content" style={{ paddingTop: "100px" }}>
+            <div className="content">
               <Sidebar links={sidebarContent} />
                
               <Outlet context={{ setSidebarContent }}/>
